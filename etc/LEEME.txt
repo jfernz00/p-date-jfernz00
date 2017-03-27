@@ -1,0 +1,3 @@
+1º-Creo los ficheros, paquetes y configuro BUILD.XML
+
+2º-Empiezo a implementar Main y Date. (introduzco Teclado por si fuera necesario introducir algo por teclado, en caso negativo lo eliminare mas adelante)
