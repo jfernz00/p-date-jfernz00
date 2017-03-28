@@ -7,14 +7,29 @@ public class MainDate{
 
 	
 	Date today = new Date (28,3,2017);
-	Date other = new Date (28,3,1492);
-	
-	System.out.println("Tienen el mismo dia? -- "+today.isSameDay(other.getDay()));
+//	Date other = new Date (28,3,2017);
+	Date other = new Date (28,3,1942);
 
-	System.out.println("Tienen el mismo MES? -- "+today.isSameMonth(other.getMonth()));
+//mensajes por pantalla de ayuda
+	System.out.println(" ----- MENSAJE DE CONTROL ----- ");
+	System.out.println("FECHA 1: "+today.getDay()+" / "+today.getMonth()+" / "+today.getYear()) ;
+	System.out.println("FECHA 2: "+other.getDay()+" / "+other.getMonth()+" / "+other.getYear()) ;
+	System.out.println(" ");	
+
+	System.out.println(" ----- PARTE 1 ----- ");	
 	
-	System.out.println("Tienen el mismo AÑO? -- "+today.isSameYear(other.getYear()));
+//Ejercicios DIAPOSITIVA-1
+	System.out.println("Tienen el mismo DIA? - "+today.isSameDay(other.getDay()));
+
+	System.out.println("Tienen el mismo MES? - "+today.isSameMonth(other.getMonth()));
 	
+	System.out.println("Tienen el mismo AÑO? - "+today.isSameYear(other.getYear()));
+	
+	System.out.println("Tienen la misma FECHA? - "+today.isSame(other.getDay(),other.getMonth(),other.getYear()));
+
+	
+//Ejercicios DIAPOSITIVA-2
+	System.out.println(" ----- PARTE 2 ----- ")
 
 
 

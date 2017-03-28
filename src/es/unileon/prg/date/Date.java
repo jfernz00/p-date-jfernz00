@@ -2,10 +2,10 @@ package es.unileon.prg.date;
 
 public class Date {
 
-	int _day;
-	int _month;
-	int _year;
-	
+int _day;
+int _month;
+int _year;
+
 	
 	public Date(int day, int month, int year){
 		
@@ -14,14 +14,15 @@ public class Date {
 		_year = year;
 	}
 
+//day
 	public int getDay(){
 		return _day;
 	}
-
+//month
 	public int getMonth(){
 		return _month;
 	}
-
+//year
 	public int getYear(){
 		return _year;
 	}
@@ -42,7 +43,6 @@ public class Date {
 			same =true;
 		}
 		return same;
-
 	}
 
 //SAME_DAY
@@ -52,8 +52,37 @@ public class Date {
 			same =true;
 		}
 		return same;
-
 	}
-}
 
+
+//SAME_DATE
+	public boolean isSame(int day, int month, int year){
+		boolean same=false;
+		if((_year==year) && (_month==month) && (_day==day)){
+			same=true;
+		}
+		return same;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
