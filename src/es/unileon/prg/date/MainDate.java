@@ -36,5 +36,7 @@ System.out.println(" ");
 
 	System.out.println("Checking Mes ... - "+today.checkMonthDays(today.getMonth()));
 
+System.out.println("Checking CURRENT_SEASON ... - "+today.seasonOfTheMonth(today.getMonth(),today.getDay()));
+
 	}	
 }

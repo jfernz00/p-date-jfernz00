@@ -64,6 +64,7 @@ int _year;
 		return same;
 	}
 
+//MONTH_NAME
 	public String getMonthName(int month){
 		String cadMonth="";
 		
@@ -96,15 +97,16 @@ int _year;
 		return cadMonth;
 	}
 	
+//CHECH
 	public String checkMonthDays(int month){
 		int numDay=0;
 		switch(month){
 			
 			case 2:  numDay=28;
 				break;
-			case 4: 
-			case 6: 
-			case 9:
+			case 4: //next
+			case 6: //next
+			case 9: //next
 			case 11:  numDay=30;
 				break;
 			default: numDay=31;
@@ -115,19 +117,55 @@ int _year;
 			check="Checked... INCORRECT NUMBER OF DAYS";
 		}
 		return check;
-	
-
-
 	}
 
 
+//SEASON
+	public String seasonOfTheMonth(int month,int day){
+		String season="";
 
-
-
-
-
-
-
+		switch(month){
+			case 1: season="INVIERNO";
+				break;
+			case 2: season="INVIERNO";
+				break;
+			case 3: 
+				if (_day<=21){season="INVIERNO";
+				}
+				else{season="PRIMAVERA";
+				}
+				break;
+			case 4: season="PRIMAVERA";
+				break;
+			case 5: season="PRIMAVERA";
+				break;
+			case 6: 
+				if (_day<=21){season="PRIMAVERA";
+				}
+				else{season="VERANO";
+				}
+				break;
+			case 7: season="VERANO";
+				break;
+			case 8: season="VERANO";
+				break;
+			case 9: if (_day<=23){season="VERANO";
+				}
+				else{season="OTOÑO";
+				}
+				break;
+			case 10: season="OTOÑO";
+				break;
+			case 11: season="OTOÑO";
+				break;
+			case 12:if (_day<=21){season="OTOÑO";
+				}
+				else{season="INVIERNO";
+				}
+				break;
+			}
+			return season;
+	}
 
 
 
