@@ -16,15 +16,15 @@ int _year;
 
 //day
 	public int getDay(){
-		return _day;
+	return _day;
 	}
 //month
 	public int getMonth(){
-		return _month;
+	return _month;
 	}
 //year
 	public int getYear(){
-		return _year;
+	return _year;
 	}
 
 //SAME_YEAR
@@ -33,7 +33,7 @@ int _year;
 		if(_year==year){
 			same=true;
 		}
-		return same;
+	return same;
 	}
 
 //SAME_MONTH
@@ -42,7 +42,7 @@ int _year;
 		if(_month==month){
 			same =true;
 		}
-		return same;
+	return same;
 	}
 
 //SAME_DAY
@@ -51,7 +51,7 @@ int _year;
 		if(_day==day){
 			same =true;
 		}
-		return same;
+	return same;
 	}
 
 
@@ -61,7 +61,7 @@ int _year;
 		if((_year==year) && (_month==month) && (_day==day)){
 			same=true;
 		}
-		return same;
+	return same;
 	}
 
 //MONTH_NAME
@@ -94,7 +94,7 @@ int _year;
 			case 12: cadMonth="Diciembre";
 				break;
 		}
-		return cadMonth;
+	return cadMonth;
 	}
 	
 //CHECH
@@ -116,7 +116,7 @@ int _year;
 		if(numDay<=_day){
 			check="Checked... INCORRECT NUMBER OF DAYS";
 		}
-		return check;
+	return check;
 	}
 
 
@@ -164,7 +164,74 @@ int _year;
 				}
 				break;
 			}
-			return season;
+	return season;
+	}
+
+//MOTHS_UNTIL_YEAR_ENDS
+	public int monthsUntilYearEnd(int month){
+		int left=0;
+			for(int i=month; i<=12;i++){
+				left++;
+			}
+	return left;
+	}
+	
+//PRINT_DATE
+	public String printDate(int day, int month, int year){
+		
+		String printDate=day+" / "+month+" / "+year;
+	return printDate;
+	}
+
+//COUNT_DAYS_TILL_END
+	public int countDaysTillNewYear(int day, int month, int year){
+		int counter=0;
+		int numDay=0;
+		int resto=day;
+				
+		for(int i=month; i<=12;i++){
+			switch(i){
+				case 1: numDay=31;
+					counter=counter+numDay;
+					break;
+				case 2:  numDay=28;
+					counter=counter+numDay;
+					break;
+				case 3:  numDay=31;
+					counter=counter+numDay;
+					break;
+				case 4: numDay=30;
+					counter=counter+numDay;
+					break;
+				case 5: numDay=31;
+					counter=counter+numDay;
+					break;
+				case 6: numDay=30;
+					counter=counter+numDay;
+					break;
+				case 7:  numDay=31;
+					counter=counter+numDay;
+					break;
+				case 8:  numDay=31;
+					counter=counter+numDay;
+					break;
+				case 9: numDay=30;
+					counter=counter+numDay;
+					break;
+				case 10: numDay=31;
+					counter=counter+numDay;
+					break;
+				case 11:  numDay=30;
+					counter=counter+numDay;
+					break;
+				case 12:  numDay=31;
+					counter=counter+numDay;
+					break;
+			}
+
+			counter=counter-resto;
+		}
+	return counter;
 	}
 
 
@@ -172,8 +239,4 @@ int _year;
 
 
 
-
-
-
 }
-

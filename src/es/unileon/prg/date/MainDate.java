@@ -6,9 +6,9 @@ public class MainDate{
 	public static void main(String args[]){
 
 	
-	Date today = new Date (29,3,2017);
-//	Date other = new Date (28,3,2017);
-	Date other = new Date (28,3,1942);
+	Date today = new Date (30,3,2017);
+//	Date other = new Date (6,2,1993);
+	Date other = new Date (9,4,1994);
 
 //mensajes por pantalla de ayuda
 	System.out.println(" ----- MENSAJE DE CONTROL ----- ");
@@ -38,5 +38,16 @@ System.out.println(" ");
 
 System.out.println("Checking CURRENT_SEASON ... - "+today.seasonOfTheMonth(today.getMonth(),today.getDay()));
 
-	}	
+System.out.println(" ");
+
+//Ejercicios DIAPOSITIVA-3
+	System.out.println(" ----- PARTE 3 ----- ");
+
+	System.out.println("Numero de MESES hasta fin de año - "+today.monthsUntilYearEnd(today.getMonth()));
+
+	//-- HECHO EN CLASE
+	System.out.println("Print DATE - "+today.printDate(other.getDay(),other.getMonth(),other.getYear()));
+
+	System.out.println("Print ALL days till the end - "+today.countDaysTillNewYear(other.getDay(),other.getMonth(),other.getYear()));
+	}
 }
