@@ -64,6 +64,29 @@ int _year;
 	return same;
 	}
 
+
+//----------------------- SIN IF--------------------
+
+	public boolean isSameDayWithOutIf(int day){
+	return (_day==day);
+	}
+
+	public boolean isSameMonthWithOutIf(int month){
+	return (_month==month);
+	}
+	
+	public boolean isSameYearWithOutIf(int year){
+	return (_year==year);
+	}
+
+	public boolean isSameWithOutIf(int day, int month, int year){
+	return (((_month==month)&&(_day==day))&&(_year==year));
+	}
+
+//-------------------------------------------------------
+
+
+
 //MONTH_NAME
 	public String getMonthName(int month){
 		String cadMonth="";
@@ -183,8 +206,55 @@ int _year;
 	return printDate;
 	}
 
-//COUNT_DAYS_TILL_END
-	public int countDaysTillNewYear(int day, int month, int year){
+
+//Cuenta numero dias del mes (ayuda)
+	public int countMonthDays (int month){
+		int numDay=0;
+			switch(month){
+				//28				
+				case 2:  numDay=28;
+					break;
+				//30
+				case 4://next
+				case 6://next
+				case 9://next
+				case 11:numDay=30;
+					break;
+				//31
+				default:numDay=31;
+					break;
+			}
+		return numDay;
+		}
+
+//DAYS_TILL_MONTH_END
+	public int countDaysForNextMonth(int day, int month){
+		int counter=0;
+		int numDay=0;
+		
+		//numero de dias del mes - dia actual = FALTAN
+			switch(month){
+				//28				
+				case 2:  numDay=28;
+					counter=numDay-day;
+					break;
+				//30
+				case 4://next
+				case 6://next
+				case 9://next
+				case 11:numDay=30;
+					counter=numDay-day;
+					break;
+				//31
+				default:numDay=31;
+					counter=numDay-day;
+					break;
+			}
+		return counter;
+		}
+
+//EXTRA_DAYS_TILL_YEAR_END
+	public int countDaysTillNewYear(int day, int month){
 		int counter=0;
 		int numDay=0;
 		int resto=day;
@@ -228,15 +298,50 @@ int _year;
 					counter=counter+numDay;
 					break;
 			}
+		}
+		counter=counter-resto;
+	return counter;
+	}
 
-			counter=counter-resto;
+//COMPARA MESES CON MISMOS DIAS
+	public int compareMonth(int month){
+		int counter=0;
+		int similarDays=countMonthDays(_month);
+		for (int i=month-month; i<=12;i++){
+			int compare=countMonthDays(i);
+			if( similarDays==compare){
+				counter++;		
+			}
 		}
 	return counter;
 	}
 
+//DIAS DESDE PRIMERO DE AÑO
+
+	public int daysSinseFirstOfTheYear(int day,int month){
+		int sinceFisrt=0;
+		int last=365-countDaysTillNewYear(_day,_month);
+		return last;
 
 
 
+//APTTEMS TO EQUAL
+	
+	//TERMINAR esta mal
+	public int apttemsToEqualDate(int day,int month){
+		int randomDay=0;
+		int randomMonth=0;
+		int cont=0;
 
-
+		while ((randomDay!=_day) || (randomMonth!=_month)){
+			cont++;
+		}
+	return cont;
+	}
 }
+
+
+
+
+
+
