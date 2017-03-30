@@ -6,7 +6,7 @@ public class MainDate{
 	public static void main(String args[]){
 
 	
-	Date today = new Date (30,3,2017);
+	Date today = new Date (31,3,2017);
 //	Date other = new Date (6,2,1993);
 	Date other = new Date (9,4,1994);
 
@@ -18,7 +18,7 @@ public class MainDate{
 
 	System.out.println(" ----- PARTE 1 ----- ");	
 
-	System.out.println(" Comparamos Hoy y Especial (anteriores)");
+	System.out.println(" Comparamos Hoy y Especial - ejemplos");
 	
 //Ejercicios DIAPOSITIVA-2
 	System.out.println("Tienen el mismo DIA? - "+today.isSameDay(other.getDay()));
@@ -81,6 +81,18 @@ System.out.println("Dias hasta siguiente Mes = "+other.countDaysForNextMonth(oth
 //Ejercicios DIAPOSITIVA-5
 	System.out.println(" ----- PARTE 4 ----- ");
 
-	System.out.println("Random Attemps till equal date = "+other.apttemsToEqualDate(other.getDay(),other.getMonth()));
+//No tenemos en cuenta el AÑO
+	System.out.println("Random ATTEMPS for EQUAL date = "+other.attempsToEqualDate(other.getDay(),other.getMonth()));
+
+System.out.println("(DO_WHILE EDITION)= "+other.attempsToEqualWithDoWhile(other.getDay(),other.getMonth()));
+
+	//Extra cogemos 2 metodos anteriores y nos devuelve el numero de untentos de random hasta que son iguales
+
+	System.out.println("(EXTRA)* -Randoms hasta que ambos metodos dan mismo numero de intentos= "+other.attempsToAttempsEqual(other.getDay(),other.getMonth()));
+
+
+//DIA DE LA SEMANA de una fecha
+	System.out.println("DIA DE LA SEMANA PARA LA FECHA DADA = "+other.weekDay(other.getDay(),other.getMonth()));
+
 	}
 }

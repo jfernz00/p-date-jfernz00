@@ -136,7 +136,7 @@ int _year;
 		}
 
 		String check="Checked... CORRECT";
-		if(numDay<=_day){
+		if(numDay<_day){
 			check="Checked... INCORRECT NUMBER OF DAYS";
 		}
 	return check;
@@ -322,26 +322,112 @@ int _year;
 		int sinceFisrt=0;
 		int last=365-countDaysTillNewYear(_day,_month);
 		return last;
-
-
-
-//APTTEMS TO EQUAL
-	
-	//TERMINAR esta mal
-	public int apttemsToEqualDate(int day,int month){
-		int randomDay=0;
-		int randomMonth=0;
-		int cont=0;
-
-		while ((randomDay!=_day) || (randomMonth!=_month)){
-			cont++;
-		}
-	return cont;
-	}
 }
 
 
+//ATTEMPS TO EQUAL
+	public int attempsToEqualDate(int day, int month){
+		int cont=0;
+		int aux=0;
+		while (aux==0){
+			month = (int)(Math.random()*(0-12)+13);
+				
+			if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+				day=(int)(Math.random()*(0-31)+31);
+			}
+			else if(month==2){
+				day=(int)(Math.random()*(0-28)+28);
+			}
+			else{
+				day=(int)(Math.random()*(0-30)+30);			
+			}
+			cont++;
+			
+			if((_day==day) && (_month==month)){
+				aux=1;
+			}
+		}
+	return cont;
+	}
+
+//ATTEMPS (DO_WHILE)
+
+	public int attempsToEqualWithDoWhile(int day, int month){
+		int cont=0;
+		int aux=0;
+		 do{
+			month = (int)(Math.random()*(0-12)+12);
+				
+			if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+				day=(int)(Math.random()*(0-31)+31);
+			}
+			else if(month==2){
+				day=(int)(Math.random()*(0-28)+28);
+			}
+			else{
+				day=(int)(Math.random()*(0-30)+30);			
+			}
+			cont++;
+			
+			if((_day==day) && (_month==month)){
+				aux=1;
+			}
+		} while (aux==0);
+	return cont;
+	
+	}
+
+//Extra_BUSQUEDA HASTA QUE EL NUMERO DE RANDOMS DE AMBOS METODOS COINCIDE
+	public int attempsToAttempsEqual(int day, int month){
+		int recounter=0;
+		int aux=0;
+		 while(aux==0){
+			if (attempsToEqualWithDoWhile(day,month) != attempsToEqualDate(day,month)){
+			recounter++;
+		 	}
+			else{
+				aux=1;			
+			}
+		}
+	return recounter;
+	}
 
 
+//DIA DE LA SEMANA PARA UNA FECHA DADA
 
+	public String weekDay(int day, int month){
+		
+		//usamos numero de dias hasta la fecha
+		int cont=daysSinseFirstOfTheYear(day,month);
+		int aux=0;
+		int mes=1;
+		String cadena="";
+//si a la fecha dada le voy quitando modulo 7, el resultado permanece
 
+		while(cont>7){
+			cont=cont-7;
+		}
+		for(int i=1;i<=cont;i++){
+			aux++;
+		}
+		switch(aux) {
+		case 1:  cadena="domingo";
+			break;
+		case 2:  cadena="lunes";
+			break;
+		case 3:  cadena="martes";
+			break;
+		case 4:  cadena="miercoles";
+			break;
+		case 5:  cadena="jueves";
+			break;
+		case 6:  cadena="viernes";
+			break;
+		case 7:  cadena="sabado";
+			break;
+		}		
+
+	return cadena;
+	}
+
+}
