@@ -1,3 +1,11 @@
+Javier Fernandez Zamora
+
+horas:20
+
 1º-Creo los ficheros, paquetes y configuro BUILD.XML
 
-2º-Empiezo a implementar Main y Date. (introduzco Teclado por si fuera necesario introducir algo por teclado, en caso negativo lo eliminare mas adelante)
+2º-Empiezo a implementar Main y Date.
+
+3º-Metodos pedidos en las diapositivas.
+
+4º Repaso.
